@@ -1,0 +1,105 @@
+{
+  "userId": "u001",
+  "plan": {
+    "name": "Standard",
+    "pricePerMonth": 25,
+    "tokensPerMonth": 20
+  },
+  "balance": 20,
+  "history": [
+    {
+      "titleId": "t006",
+      "title": "The Bear S1E4",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-11-13T20:10:00Z"
+    },
+    {
+      "titleId": "t015",
+      "title": "The Grand Budapest Hotel",
+      "tokensSpent": 1,
+      "watchedAt": "2026-11-11T21:05:00Z"
+    },
+    {
+      "titleId": "t024",
+      "title": "Everything Everywhere All at Once",
+      "tokensSpent": 1,
+      "watchedAt": "2026-11-09T20:40:00Z"
+    },
+    {
+      "titleId": "t032",
+      "title": "Deadpool & Wolverine",
+      "tokensSpent": 2,
+      "watchedAt": "2026-11-07T19:30:00Z"
+    },
+    {
+      "titleId": "t005",
+      "title": "The Bear S1E3",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-11-05T20:25:00Z"
+    },
+    {
+      "titleId": "t004",
+      "title": "The Bear S1E2",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-11-04T20:20:00Z"
+    },
+    {
+      "titleId": "t003",
+      "title": "The Bear S1E1",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-11-02T20:15:00Z"
+    },
+    {
+      "titleId": "t038",
+      "title": "Hereditary",
+      "tokensSpent": 1,
+      "watchedAt": "2026-10-31T23:00:00Z"
+    },
+    {
+      "titleId": "t023",
+      "title": "Crazy Rich Asians",
+      "tokensSpent": 1,
+      "watchedAt": "2026-10-29T21:00:00Z"
+    },
+    {
+      "titleId": "t012",
+      "title": "The Mandalorian S1E2",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-10-27T20:45:00Z"
+    },
+    {
+      "titleId": "t011",
+      "title": "The Mandalorian S1E1",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-10-26T20:30:00Z"
+    },
+    {
+      "titleId": "t026",
+      "title": "The Princess Bride",
+      "tokensSpent": 1,
+      "watchedAt": "2026-10-24T22:15:00Z"
+    },
+    {
+      "titleId": "t040",
+      "title": "Booksmart",
+      "tokensSpent": 1,
+      "watchedAt": "2026-10-22T20:00:00Z"
+    },
+    {
+      "titleId": "t013",
+      "title": "Only Murders in the Building S1E1",
+      "tokensSpent": 0.5,
+      "watchedAt": "2026-10-20T21:10:00Z"
+    },
+    {
+      "titleId": "t029",
+      "title": "The Hangover",
+      "tokensSpent": 1,
+      "watchedAt": "2026-10-18T19:45:00Z"
+    }
+  ]
+}
+
+
+
+
