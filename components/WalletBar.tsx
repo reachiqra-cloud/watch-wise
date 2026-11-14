@@ -54,6 +54,12 @@ export default function WalletBar() {
             >
               History
             </Link>
+                        <Link
+              href="/assistant"
+              className="hover:text-neutral-900 dark:hover:text-white"
+            >
+              Assistant
+            </Link>
           </nav>
         </div>
 
