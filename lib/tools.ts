@@ -1,5 +1,6 @@
 import { Type, type FunctionDeclaration } from "@google/genai";
 import catalogData from "@/data/catalog.json";
+import { getWalletState } from "@/data/store";
 
 // ---------- Types (match CONTRACT.md) ----------
 export type Title = {
@@ -24,42 +25,12 @@ export type HistoryEntry = {
 // ---------- Real catalogue (Person A's data/catalog.json) ----------
 export const CATALOG = catalogData as unknown as Title[];
 
-// ---------- STUB wallet + history ----------
-// TODO: replace with the real state from Person A's /api/wallet route.
-const WALLET = { balance: 14.5 };
-// Stub history: [titleId, daysAgo]. TODO: replace with Person A's real history.
-// (No Bear episodes on purpose, so the Bear bundle demo still shows savings.)
-const STUB_WATCHES: [string, number][] = [
-  ["t022", 1],
-  ["t011", 2],
-  ["t012", 3],
-  ["t014", 5],
-  ["t013", 6],
-  ["t001", 8],
-  ["t002", 9],
-  ["t016", 10],
-  ["t029", 12],
-  ["t020", 13],
-  ["t031", 15],
-  ["t019", 17],
-  ["t040", 19],
-  ["t021", 21],
-];
+export function getWallet() {
+  return { balance: getWalletState().balance };
+}
 
-function buildHistory(): HistoryEntry[] {
-  const DAY = 24 * 60 * 60 * 1000;
-  return STUB_WATCHES.flatMap(([id, daysAgo]) => {
-    const t = CATALOG.find((x) => x.id === id);
-    if (!t) return [];
-    return [
-      {
-        titleId: t.id,
-        title: t.title,
-        tokensSpent: t.tokenCost,
-        watchedAt: new Date(Date.now() - daysAgo * DAY).toISOString(),
-      },
-    ];
-  });
+export function getHistory() {
+  return { history: getWalletState().history };
 }
 
 // ---------- Tool implementations ----------
@@ -102,14 +73,6 @@ export function searchCatalog(args: {
   }
 
   return { titles: results.slice(0, 12) }; // cap so we don't flood the model
-}
-
-export function getWallet() {
-  return { balance: WALLET.balance };
-}
-
-export function getHistory() {
-  return { history: buildHistory() };
 }
 
 // ---------- Tool declarations Gemini sees ----------
