@@ -27,14 +27,40 @@ export const CATALOG = catalogData as unknown as Title[];
 // ---------- STUB wallet + history ----------
 // TODO: replace with the real state from Person A's /api/wallet route.
 const WALLET = { balance: 14.5 };
-const HISTORY: HistoryEntry[] = [
-  {
-    titleId: "t003",
-    title: "The Bear S1E1",
-    tokensSpent: 0.5,
-    watchedAt: "2026-11-02T20:15:00Z",
-  },
+// Stub history: [titleId, daysAgo]. TODO: replace with Person A's real history.
+// (No Bear episodes on purpose, so the Bear bundle demo still shows savings.)
+const STUB_WATCHES: [string, number][] = [
+  ["t022", 1],
+  ["t011", 2],
+  ["t012", 3],
+  ["t014", 5],
+  ["t013", 6],
+  ["t001", 8],
+  ["t002", 9],
+  ["t016", 10],
+  ["t029", 12],
+  ["t020", 13],
+  ["t031", 15],
+  ["t019", 17],
+  ["t040", 19],
+  ["t021", 21],
 ];
+
+function buildHistory(): HistoryEntry[] {
+  const DAY = 24 * 60 * 60 * 1000;
+  return STUB_WATCHES.flatMap(([id, daysAgo]) => {
+    const t = CATALOG.find((x) => x.id === id);
+    if (!t) return [];
+    return [
+      {
+        titleId: t.id,
+        title: t.title,
+        tokensSpent: t.tokenCost,
+        watchedAt: new Date(Date.now() - daysAgo * DAY).toISOString(),
+      },
+    ];
+  });
+}
 
 // ---------- Tool implementations ----------
 export function searchCatalog(args: {
@@ -83,7 +109,7 @@ export function getWallet() {
 }
 
 export function getHistory() {
-  return { history: HISTORY };
+  return { history: buildHistory() };
 }
 
 // ---------- Tool declarations Gemini sees ----------
