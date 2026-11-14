@@ -1,4 +1,4 @@
-import { Type } from "@google/genai";
+import { Type, type FunctionDeclaration } from "@google/genai";
 import catalogData from "@/data/catalog.json";
 
 // ---------- Types (match CONTRACT.md) ----------
@@ -113,7 +113,7 @@ export function getHistory() {
 }
 
 // ---------- Tool declarations Gemini sees ----------
-export const toolDeclarations = [
+export const toolDeclarations: FunctionDeclaration[] = [
   {
     name: "search_catalog",
     description:
