@@ -1,0 +1,699 @@
+[
+  {
+    "id": "t001",
+    "title": "Stranger Things S1E1",
+    "provider": "Netflix",
+    "type": "episode",
+    "genre": [
+      "sci-fi",
+      "horror"
+    ],
+    "runtimeMinutes": 48,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t002",
+    "title": "Stranger Things S1E2",
+    "provider": "Netflix",
+    "type": "episode",
+    "genre": [
+      "sci-fi",
+      "horror"
+    ],
+    "runtimeMinutes": 55,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t003",
+    "title": "The Bear S1E1",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 30,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t004",
+    "title": "The Bear S1E2",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 27,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t005",
+    "title": "The Bear S1E3",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 22,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t006",
+    "title": "The Bear S1E4",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 31,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t007",
+    "title": "The Bear S1E5",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 26,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t008",
+    "title": "The Bear S1E6",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 33,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t009",
+    "title": "The Bear S1E7",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 28,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t010",
+    "title": "The Bear S1E8",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 34,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t011",
+    "title": "The Mandalorian S1E1",
+    "provider": "Disney+",
+    "type": "episode",
+    "genre": [
+      "sci-fi",
+      "action"
+    ],
+    "runtimeMinutes": 39,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t012",
+    "title": "The Mandalorian S1E2",
+    "provider": "Disney+",
+    "type": "episode",
+    "genre": [
+      "sci-fi",
+      "action"
+    ],
+    "runtimeMinutes": 32,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t013",
+    "title": "Only Murders in the Building S1E1",
+    "provider": "Hulu",
+    "type": "episode",
+    "genre": [
+      "comedy",
+      "mystery"
+    ],
+    "runtimeMinutes": 31,
+    "isNewRelease": false,
+    "tokenCost": 0.5,
+    "episodeCount": null
+  },
+  {
+    "id": "t014",
+    "title": "Superbad",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "comedy"
+    ],
+    "runtimeMinutes": 113,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t015",
+    "title": "The Grand Budapest Hotel",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 99,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t016",
+    "title": "Knives Out",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "mystery",
+      "comedy"
+    ],
+    "runtimeMinutes": 130,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t017",
+    "title": "Spider-Man: Into the Spider-Verse",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "animation",
+      "action"
+    ],
+    "runtimeMinutes": 117,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t018",
+    "title": "The Notebook",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "romance",
+      "drama"
+    ],
+    "runtimeMinutes": 123,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t019",
+    "title": "Mad Max: Fury Road",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "action",
+      "sci-fi"
+    ],
+    "runtimeMinutes": 120,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t020",
+    "title": "Get Out",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "horror",
+      "thriller"
+    ],
+    "runtimeMinutes": 104,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t021",
+    "title": "Coco",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "animation",
+      "family"
+    ],
+    "runtimeMinutes": 105,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t022",
+    "title": "Palm Springs",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "romance"
+    ],
+    "runtimeMinutes": 90,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t023",
+    "title": "Crazy Rich Asians",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "romance"
+    ],
+    "runtimeMinutes": 120,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t024",
+    "title": "Everything Everywhere All at Once",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "sci-fi",
+      "comedy"
+    ],
+    "runtimeMinutes": 139,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t025",
+    "title": "Parasite",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "thriller",
+      "drama"
+    ],
+    "runtimeMinutes": 132,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t026",
+    "title": "The Princess Bride",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "adventure"
+    ],
+    "runtimeMinutes": 98,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t027",
+    "title": "Jaws",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "thriller",
+      "horror"
+    ],
+    "runtimeMinutes": 124,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t028",
+    "title": "Toy Story",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "animation",
+      "family"
+    ],
+    "runtimeMinutes": 81,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t029",
+    "title": "The Hangover",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "comedy"
+    ],
+    "runtimeMinutes": 100,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t030",
+    "title": "Interstellar",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "sci-fi",
+      "drama"
+    ],
+    "runtimeMinutes": 169,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t031",
+    "title": "Dune: Part Two",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "sci-fi",
+      "action"
+    ],
+    "runtimeMinutes": 166,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t032",
+    "title": "Deadpool & Wolverine",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "action",
+      "comedy"
+    ],
+    "runtimeMinutes": 128,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t033",
+    "title": "Wicked",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "musical",
+      "fantasy"
+    ],
+    "runtimeMinutes": 160,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t034",
+    "title": "Inside Out 2",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "animation",
+      "family"
+    ],
+    "runtimeMinutes": 96,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t035",
+    "title": "Barbie",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "fantasy"
+    ],
+    "runtimeMinutes": 114,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t036",
+    "title": "Challengers",
+    "provider": "Prime Video",
+    "type": "movie",
+    "genre": [
+      "drama",
+      "romance"
+    ],
+    "runtimeMinutes": 131,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t037",
+    "title": "Anyone But You",
+    "provider": "Netflix",
+    "type": "movie",
+    "genre": [
+      "comedy",
+      "romance"
+    ],
+    "runtimeMinutes": 103,
+    "isNewRelease": true,
+    "tokenCost": 2,
+    "episodeCount": null
+  },
+  {
+    "id": "t038",
+    "title": "Hereditary",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "horror",
+      "thriller"
+    ],
+    "runtimeMinutes": 127,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t039",
+    "title": "Hidden Figures",
+    "provider": "Disney+",
+    "type": "movie",
+    "genre": [
+      "drama",
+      "history"
+    ],
+    "runtimeMinutes": 127,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "t040",
+    "title": "Booksmart",
+    "provider": "Hulu",
+    "type": "movie",
+    "genre": [
+      "comedy"
+    ],
+    "runtimeMinutes": 102,
+    "isNewRelease": false,
+    "tokenCost": 1,
+    "episodeCount": null
+  },
+  {
+    "id": "s001",
+    "title": "Stranger Things Season 1",
+    "provider": "Netflix",
+    "type": "season",
+    "genre": [
+      "sci-fi",
+      "horror"
+    ],
+    "runtimeMinutes": 400,
+    "isNewRelease": false,
+    "tokenCost": 3,
+    "episodeCount": 8
+  },
+  {
+    "id": "s002",
+    "title": "Wednesday Season 1",
+    "provider": "Netflix",
+    "type": "season",
+    "genre": [
+      "comedy",
+      "fantasy"
+    ],
+    "runtimeMinutes": 400,
+    "isNewRelease": false,
+    "tokenCost": 3,
+    "episodeCount": 8
+  },
+  {
+    "id": "s003",
+    "title": "The Mandalorian Season 1",
+    "provider": "Disney+",
+    "type": "season",
+    "genre": [
+      "sci-fi",
+      "action"
+    ],
+    "runtimeMinutes": 320,
+    "isNewRelease": false,
+    "tokenCost": 3,
+    "episodeCount": 8
+  },
+  {
+    "id": "s004",
+    "title": "The Boys Season 1",
+    "provider": "Prime Video",
+    "type": "season",
+    "genre": [
+      "action",
+      "comedy"
+    ],
+    "runtimeMinutes": 440,
+    "isNewRelease": false,
+    "tokenCost": 3,
+    "episodeCount": 8
+  },
+  {
+    "id": "s005",
+    "title": "Only Murders in the Building Season 1",
+    "provider": "Hulu",
+    "type": "season",
+    "genre": [
+      "comedy",
+      "mystery"
+    ],
+    "runtimeMinutes": 350,
+    "isNewRelease": false,
+    "tokenCost": 3.5,
+    "episodeCount": 10
+  },
+  {
+    "id": "s006",
+    "title": "Fleabag Season 1",
+    "provider": "Prime Video",
+    "type": "season",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 150,
+    "isNewRelease": false,
+    "tokenCost": 2,
+    "episodeCount": 6
+  },
+  {
+    "id": "s007",
+    "title": "Andor Season 1",
+    "provider": "Disney+",
+    "type": "season",
+    "genre": [
+      "sci-fi",
+      "drama"
+    ],
+    "runtimeMinutes": 600,
+    "isNewRelease": false,
+    "tokenCost": 4.5,
+    "episodeCount": 12
+  },
+  {
+    "id": "s008",
+    "title": "Squid Game Season 1",
+    "provider": "Netflix",
+    "type": "season",
+    "genre": [
+      "thriller",
+      "drama"
+    ],
+    "runtimeMinutes": 540,
+    "isNewRelease": false,
+    "tokenCost": 3.5,
+    "episodeCount": 9
+  },
+  {
+    "id": "s009",
+    "title": "Shogun Season 1",
+    "provider": "Hulu",
+    "type": "season",
+    "genre": [
+      "drama",
+      "history"
+    ],
+    "runtimeMinutes": 600,
+    "isNewRelease": false,
+    "tokenCost": 3.5,
+    "episodeCount": 10
+  },
+  {
+    "id": "s010",
+    "title": "The Bear Season 1",
+    "provider": "Hulu",
+    "type": "season",
+    "genre": [
+      "comedy",
+      "drama"
+    ],
+    "runtimeMinutes": 240,
+    "isNewRelease": false,
+    "tokenCost": 3,
+    "episodeCount": 8
+  }
+]
