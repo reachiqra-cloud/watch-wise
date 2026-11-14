@@ -1,36 +1,86 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WatchWise
 
-## Getting Started
+**One subscription. Every streaming service. Smarter with AI.**
 
-First, run the development server:
+Built for UCSC GDG DevFest (Nov 14-15, 2026), in the Best Integration of Gemini / Google API category.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Live demo: [add the deployed link here]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## The problem
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+People pay for several streaming services (Netflix, Prime Video, Disney+, Hulu) and it adds up to $60+ a month, even though most of us only watch a few things on each one.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## The idea
 
-## Learn More
+One subscription that works across providers through a shared token wallet. The Standard plan is $25 a month for 20 tokens.
 
-To learn more about Next.js, take a look at the following resources:
+WatchWise is not just an aggregator. It is an AI-powered entertainment budgeting and optimization platform that helps you decide what to watch and get the most out of your tokens.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+| Content | Tokens |
+| --- | --- |
+| Short episode | 0.5 |
+| Standard movie | 1 |
+| Premium / new release | 2 |
+| Full season bundle | Cheaper than buying the episodes one by one |
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Token costs are fixed in code. The AI never decides prices.
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. **Unified catalogue, token wallet and watch history.** Browse every provider in one place, filter by genre, provider and type, and spend tokens with one click.
+2. **AI assistant (Gemini function calling).** Ask for a recommendation in plain English. The assistant checks the catalogue, your wallet and your history before answering, and only recommends titles you can afford.
+3. **Token optimizer.** Pick a wishlist and get the cheapest plan, for example a season bundle instead of single episodes. The token math is computed in code. Gemini picks the strategy and writes the explanation. One click buys the plan.
+4. **AI budget plan.** Gemini analyses your viewing history, projects your weekly usage on a chart, and suggests the plan tier that fits you.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## What is real and what is mock
+
+The AI layer is real. The streaming catalogue and billing are mock data: there are no public streaming APIs, and real content would need licensing and DRM. "Watch" deducts tokens from the wallet. Wallet and history live in server memory, so restarting the server resets them to 20 tokens.
+
+## Security and design choices
+
+- The Gemini API key lives only on the server (`.env.local`). The browser never sees it and only talks to our own `/api/*` routes.
+- Prices and token math live in code, not in the AI, so the AI cannot invent a price.
+- Chat messages are length-limited and every endpoint returns the same friendly error shape.
+- Frontend and backend were built in parallel against a written API contract (`CONTRACT.md`).
+
+## Built with
+
+Next.js 16 (App Router), TypeScript, Tailwind CSS, Recharts, and the Gemini API through `@google/genai`.
+
+## Run it locally
+
+    git clone https://github.com/reachiqra-cloud/watch-wise.git
+    cd watch-wise
+    npm install
+
+Create a file called `.env.local` in the project root containing:
+
+    GEMINI_API_KEY=your-key-here
+
+Then start the app and open http://localhost:3000:
+
+    npm run dev
+
+## API
+
+| Endpoint | What it does |
+| --- | --- |
+| `GET /api/catalog` | Titles, with optional `genre`, `provider` and `type` filters |
+| `GET /api/wallet` | Token balance, plan and watch history |
+| `POST /api/watch` | Spend tokens on a title |
+| `POST /api/chat` | Gemini assistant with tool calling |
+| `POST /api/optimize` | Cheapest plan for a wishlist |
+| `GET /api/budget` | AI monthly budget plan |
+
+Full request and response shapes are in `CONTRACT.md`.
+
+## Team
+
+- **Vanshita:** frontend, mock data, wallet and watch endpoints
+- **Iqra:** Gemini integration, AI endpoints, deployment
+
+## What we would build next
+
+- Save wallets and history in Firestore, with sign-in
+- Real provider integrations and household sharing
+- Gemini with Search grounding for what is trending on each service
