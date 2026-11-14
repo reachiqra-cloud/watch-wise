@@ -60,6 +60,12 @@ export default function WalletBar() {
             >
               Assistant
             </Link>
+                        <Link
+              href="/optimizer"
+              className="hover:text-neutral-900 dark:hover:text-white"
+            >
+              Optimizer
+            </Link>
           </nav>
         </div>
 
