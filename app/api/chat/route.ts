@@ -93,7 +93,10 @@ export async function POST(req: Request) {
     }
 
     const match = rawText.match(/IDS:\s*(.*)\s*$/im);
-    const reply = rawText.replace(/IDS:.*$/im, "").trim();
+    const reply = rawText
+      .replace(/IDS:.*$/im, "")
+      .replace(/\*+/g, "")
+      .trim();
 
     const validIds = new Set(CATALOG.map((t) => t.id));
     const recommendedTitles =
