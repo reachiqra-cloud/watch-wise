@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import TitleCard from "@/components/TitleCard";
+import WatchButton from "@/components/WatchButton";
 import type { Title } from "@/data/store";
 
 function FilterSelect({
@@ -139,7 +140,9 @@ export default function CataloguePage() {
           ) : (
             <div className="mt-3 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {filtered.map((t) => (
-                <TitleCard key={t.id} title={t} />
+                <TitleCard key={t.id} title={t}>
+                  <WatchButton titleId={t.id} />
+                </TitleCard>
               ))}
             </div>
           )}
