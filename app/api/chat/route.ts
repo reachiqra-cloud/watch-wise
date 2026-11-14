@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getGeminiClient, generateWithRetry } from "@/lib/gemini";
 import { CHAT_SYSTEM_PROMPT } from "@/lib/prompts";
 import { toolDeclarations, runTool, getWallet, CATALOG } from "@/lib/tools";
+import { checkRateLimit, clientKey } from "@/lib/rateLimit";
 
 type ChatTurn = { role: "user" | "assistant"; text: string };
 
@@ -12,6 +13,21 @@ function errorResponse(code: string, message: string, status: number) {
 }
 
 export async function POST(req: Request) {
+  const limit = checkRateLimit(clientKey(req));
+  if (!limit.ok) {
+    return NextResponse.json(
+      {
+        error: {
+          code: "RATE_LIMITED",
+          message: `You're sending messages too quickly. Please wait ${limit.retryAfterSeconds} seconds and try again.`,
+        },
+      },
+      {
+        status: 429,
+        headers: { "Retry-After": String(limit.retryAfterSeconds) },
+      },
+    );
+  }
   // ---- 1. Validate input ----
   let body: { message?: unknown; history?: unknown };
   try {
