@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { Title } from "@/data/store";
+import ApplyPlanButton from "@/components/ApplyPlanButton";
 
 type PlanItem = {
   action: string;
@@ -331,6 +332,13 @@ export default function OptimizerPage() {
               </ul>
 
               <p className="mt-4 text-sm">{result.explanation}</p>
+
+              {result.canAfford && (
+                <ApplyPlanButton
+                  key={JSON.stringify(result.plan)}
+                  plan={result.plan}
+                />
+              )}
 
               <p
                 className={`mt-3 text-sm font-medium ${
