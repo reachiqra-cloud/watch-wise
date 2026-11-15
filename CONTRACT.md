@@ -14,7 +14,7 @@ Project name: `[WatchWise]`
 - All requests and responses use **camelCase** field names.
 - IDs are **strings** (`"t014"`, `"u001"`), never numbers.
 - Token amounts are **numbers** and can be fractional (`0.5`).
-- **Money:** plan is `$25/month = 20 tokens`.
+- **Money:** Standard plan is `$25/month = 20 tokens` (with ads). Premium plan is `$30/month = 20 tokens` (no ads). Single tokens cost `$1.50` each.
 - Person A can build against **fake responses** in these exact shapes until Person B's endpoint is live.
 - The Gemini API key lives **only on the server** (`.env.local`). The frontend never sees it.
 
@@ -136,10 +136,12 @@ Returns the current user's token balance and watch history.
 ```json
 {
   "userId": "u001",
-  "plan": {
+    "plan": {
+    "id": "standard",
     "name": "Standard",
     "pricePerMonth": 25,
-    "tokensPerMonth": 20
+    "tokensPerMonth": 20,
+    "hasAds": true
   },
   "balance": 14.5,
   "history": [
@@ -186,7 +188,48 @@ Returns the current user's token balance and watch history.
 **Owner:** Person A.
 
 ---
+### `POST /api/plan`
 
+Switch the user's plan. Does not change the token balance.
+
+**Request:**
+
+    { "planId": "premium" }
+
+`planId` is `"standard"` ($25/month, 20 tokens, with ads) or `"premium"` ($30/month, 20 tokens, no ads).
+
+**Response 200:**
+
+    {
+      "plan": { "id": "premium", "name": "Premium", "pricePerMonth": 30, "tokensPerMonth": 20, "hasAds": false },
+      "balance": 20
+    }
+
+**Errors:** `BAD_REQUEST` if `planId` is missing, `NOT_FOUND` if the plan doesn't exist.
+
+**Owner:** Person A.
+
+---
+
+### `POST /api/topup`
+
+Buy single tokens at $1.50 each (mock payment). Adds to the balance.
+
+**Request:**
+
+    { "tokens": 5 }
+
+`tokens` is a whole number from 1 to 50.
+
+**Response 200:**
+
+    { "balance": 25, "tokensAdded": 5, "charged": 7.5 }
+
+**Errors:** `BAD_REQUEST` if `tokens` is not a whole number from 1 to 50.
+
+**Owner:** Person A.
+
+---
 ### `POST /api/chat`
 
 The Gemini entertainment assistant. The user describes what they want; Gemini uses tools to check the catalogue, wallet, and history, then recommends titles it knows the user can afford.

@@ -22,10 +22,12 @@ export type HistoryEntry = {
  
 export type Wallet = {
   userId: string;
-  plan: {
+    plan: {
+    id: string;
     name: string;
     pricePerMonth: number;
     tokensPerMonth: number;
+    hasAds: boolean;
   };
   balance: number;
   history: HistoryEntry[];

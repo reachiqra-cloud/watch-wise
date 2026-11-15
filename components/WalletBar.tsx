@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { href: "/optimizer", label: "Optimizer" },
   { href: "/budget", label: "Budget" },
   { href: "/history", label: "History" },
+  { href: "/plans", label: "Plans" },
   { href: "/about", label: "About" },
 ];
 

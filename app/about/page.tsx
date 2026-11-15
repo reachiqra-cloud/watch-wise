@@ -86,8 +86,7 @@ export default function AboutPage() {
           One wallet, shared tokens
         </h2>
         <p className="mt-2 text-slate-600 dark:text-slate-300">
-          $25 a month gets you 20 tokens that work on every service, so you pay
-          for what you actually watch.
+          Plans start at $25 a month for 20 tokens with ads, or $30 with no ads. Tokens work on every service, and you can top up with single tokens for $1.50 each.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {TOKEN_PRICES.map((p) => (

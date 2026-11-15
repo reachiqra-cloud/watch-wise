@@ -12,8 +12,7 @@ People pay for several streaming services (Netflix, Prime Video, Disney+, Hulu) 
 
 ## The idea
 
-One subscription that works across providers through a shared token wallet. The Standard plan is $25 a month for 20 tokens.
-
+One subscription that works across providers through a shared token wallet. Standard is $25 a month for 20 tokens with ads. Premium is $30 a month for 20 tokens with no ads. You can also buy single tokens for $1.50 each.
 WatchWise is not just an aggregator. It is an AI-powered entertainment budgeting and optimization platform that helps you decide what to watch and get the most out of your tokens.
 
 | Content | Tokens |
@@ -68,6 +67,8 @@ Then start the app and open http://localhost:3000:
 | `GET /api/catalog` | Titles, with optional `genre`, `provider` and `type` filters |
 | `GET /api/wallet` | Token balance, plan and watch history |
 | `POST /api/watch` | Spend tokens on a title |
+| `POST /api/plan` | Switch between the Standard and Premium plans |
+| `POST /api/topup` | Buy single tokens at $1.50 each (mock payment) |
 | `POST /api/chat` | Gemini assistant with tool calling |
 | `POST /api/optimize` | Cheapest plan for a wishlist |
 | `GET /api/budget` | AI monthly budget plan |
