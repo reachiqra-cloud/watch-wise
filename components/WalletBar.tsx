@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useState } from "react";
+import AuthButton from "@/components/AuthButton";
 
 // Any other component can tell this bar to refresh the balance by running:
 //   window.dispatchEvent(new Event("wallet-updated"));
@@ -95,13 +96,16 @@ export default function WalletBar() {
 
           <NavLinks className="hidden items-center gap-1 text-sm lg:flex" />
 
-          <div
-            aria-live="polite"
-            className={`rounded-full px-3 py-1 text-sm font-semibold ${
-              low ? "bg-amber-500 text-black" : "bg-indigo-600 text-white"
-            }`}
-          >
-            {pillText}
+          <div className="flex items-center gap-3">
+            <div
+              aria-live="polite"
+              className={`rounded-full px-3 py-1 text-sm font-semibold ${
+                low ? "bg-amber-500 text-black" : "bg-indigo-600 text-white"
+              }`}
+            >
+              {pillText}
+            </div>
+            <AuthButton />
           </div>
         </div>
 
