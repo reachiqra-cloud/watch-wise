@@ -13,7 +13,9 @@ const NAV_LINKS = [
   { href: "/optimizer", label: "Optimizer" },
   { href: "/budget", label: "Budget" },
   { href: "/history", label: "History" },
+  { href: "/about", label: "About" },
 ];
+
 
 function formatTokens(n: number) {
   return Number.isInteger(n) ? String(n) : n.toFixed(1);
@@ -91,7 +93,7 @@ export default function WalletBar() {
             WatchWise
           </Link>
 
-          <NavLinks className="hidden items-center gap-1 text-sm md:flex" />
+           <NavLinks className="hidden items-center gap-1 text-sm lg:flex" />
 
           <div
             aria-live="polite"
@@ -103,7 +105,7 @@ export default function WalletBar() {
           </div>
         </div>
 
-        <NavLinks className="-mx-1 flex gap-1 overflow-x-auto pb-2 text-sm md:hidden" />
+                <NavLinks className="-mx-1 flex gap-1 overflow-x-auto pb-2 text-sm lg:hidden" />
       </div>
     </header>
   );
