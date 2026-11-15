@@ -68,12 +68,7 @@ export default function TitleCard({
             New
           </span>
         )}
-        <span
-          aria-hidden="true"
-          className="absolute bottom-0 right-3 text-5xl font-bold leading-none text-white/40"
-        >
-          {title.title.charAt(0)}
-        </span>
+        
       </div>
 
       <div className="flex flex-1 flex-col justify-between p-4">
