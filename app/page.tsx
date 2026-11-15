@@ -5,6 +5,7 @@ import TitleCard from "@/components/TitleCard";
 import SkeletonCard from "@/components/SkeletonCard";
 import WatchButton from "@/components/WatchButton";
 import type { Title } from "@/data/store";
+import { useRouter } from "next/navigation";
 
 function FilterSelect({
   label,
@@ -43,6 +44,8 @@ export default function CataloguePage() {
   const [genre, setGenre] = useState("all");
   const [provider, setProvider] = useState("all");
   const [type, setType] = useState("all");
+  const router = useRouter();
+  const [ask, setAsk] = useState("");
 
   useEffect(() => {
     async function load() {
@@ -94,7 +97,28 @@ export default function CataloguePage() {
       <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         Every service, one wallet. Spend tokens on whatever you want to watch.
       </p>
-
+      <form
+        onSubmit={(e) => {
+          e.preventDefault();
+          const q = ask.trim();
+          if (q) router.push(`/assistant?q=${encodeURIComponent(q)}`);
+        }}
+        className="mt-5 flex gap-2"
+      >
+        <input
+          value={ask}
+          onChange={(e) => setAsk(e.target.value)}
+          maxLength={500}
+          placeholder="What are you in the mood for? e.g. something funny under 2 hours"
+          className="flex-1 rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm dark:border-neutral-700 dark:bg-neutral-900"
+        />
+        <button
+          type="submit"
+          className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-500"
+        >
+          Ask AI
+        </button>
+      </form>
       <div className="mt-5 flex flex-wrap items-end gap-3">
         <FilterSelect
           label="Genre"
