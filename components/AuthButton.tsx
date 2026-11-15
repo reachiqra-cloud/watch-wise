@@ -7,14 +7,21 @@ import {
   signOut,
   type User,
 } from "firebase/auth";
-import { auth, googleProvider } from "@/lib/firebase";
+import { getFirebaseAuth, getGoogleProvider } from "@/lib/firebase";
 
 export default function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
   const [ready, setReady] = useState(false);
+  const [available, setAvailable] = useState(true);
   const [error, setError] = useState("");
 
   useEffect(() => {
+    const auth = getFirebaseAuth();
+    if (!auth) {
+      setAvailable(false);
+      setReady(true);
+      return;
+    }
     const unsubscribe = onAuthStateChanged(auth, (u) => {
       setUser(u);
       setReady(true);
@@ -24,20 +31,20 @@ export default function AuthButton() {
 
   async function handleSignIn() {
     setError("");
+    const auth = getFirebaseAuth();
+    if (!auth) return;
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(auth, getGoogleProvider());
     } catch (err) {
       console.error("Google sign-in error:", err);
-      const e = err as { code?: unknown; message?: unknown; name?: unknown };
-      const detail =
-        `${e.name ?? ""} ${String(e.code ?? "")} ${String(e.message ?? "")}`.trim();
-      if (String(e.code) !== "auth/popup-closed-by-user") {
-        setError(`Sign-in failed: ${detail || "unknown error"}`);
+      const code = (err as { code?: string }).code ?? "";
+      if (code !== "auth/popup-closed-by-user") {
+        setError("Sign-in failed. Please try again.");
       }
     }
   }
 
-  if (!ready) return null;
+  if (!ready || !available) return null;
 
   if (!user) {
     return (
@@ -68,7 +75,10 @@ export default function AuthButton() {
         {user.displayName?.split(" ")[0] ?? "You"}
       </span>
       <button
-        onClick={() => signOut(auth)}
+        onClick={() => {
+          const auth = getFirebaseAuth();
+          if (auth) signOut(auth);
+        }}
         className="rounded-lg border border-slate-300 px-2 py-1 text-xs hover:bg-slate-100 dark:border-slate-600 dark:hover:bg-slate-700"
       >
         Sign out
