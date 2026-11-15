@@ -3,9 +3,9 @@ import type { Title } from "@/data/store";
 
 const PROVIDER_STYLES: Record<string, string> = {
   Netflix: "bg-red-600 text-white",
-  "Prime Video": "bg-sky-600 text-white",
-  "Disney+": "bg-blue-700 text-white",
-  Hulu: "bg-emerald-500 text-black",
+  "Prime Video": "bg-blue-600 text-white",
+  "Disney+": "bg-[#8675E6] text-white",
+  Hulu: "bg-[#429E52] text-white",
 };
 
 const TYPE_LABELS: Record<string, string> = {
