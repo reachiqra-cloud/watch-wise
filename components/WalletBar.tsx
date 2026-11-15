@@ -12,7 +12,7 @@ const NAV_LINKS = [
   { href: "/", label: "Catalogue" },
   { href: "/assistant", label: "Assistant" },
   { href: "/optimizer", label: "Optimizer" },
-  { href: "/budget", label: "Budget" },
+  { href: "/budget", label: "Analysis" },
   { href: "/history", label: "History" },
   { href: "/plans", label: "Plans" },
   { href: "/about", label: "About" },

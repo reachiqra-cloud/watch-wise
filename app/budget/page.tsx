@@ -88,7 +88,7 @@ export default function BudgetPage() {
     <div>
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight">Budget plan</h1>
+        <h1 className="text-2xl font-bold tracking-tight">Data analysis</h1>
           <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             An AI look at your viewing history, with a plan that fits how you
             actually watch.
