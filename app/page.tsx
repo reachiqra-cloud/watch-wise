@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import TitleCard from "@/components/TitleCard";
+import SkeletonCard from "@/components/SkeletonCard";
 import WatchButton from "@/components/WatchButton";
 import type { Title } from "@/data/store";
 
@@ -121,8 +122,12 @@ export default function CataloguePage() {
         </button>
       </div>
 
-      {loading && (
-        <p className="mt-8 text-sm text-slate-500">Loading catalogue…</p>
+            {loading && (
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {Array.from({ length: 6 }, (_, i) => (
+            <SkeletonCard key={i} />
+          ))}
+        </div>
       )}
 
       {error && (
