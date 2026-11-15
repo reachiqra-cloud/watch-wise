@@ -14,6 +14,7 @@ export default function AuthButton() {
   const [ready, setReady] = useState(false);
   const [available, setAvailable] = useState(true);
   const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
 
   useEffect(() => {
     const auth = getFirebaseAuth();
@@ -24,23 +25,35 @@ export default function AuthButton() {
     }
     const unsubscribe = onAuthStateChanged(auth, (u) => {
       setUser(u);
+      if (u) setError("");
       setReady(true);
     });
     return unsubscribe;
   }, []);
 
   async function handleSignIn() {
+    if (busy) return; // ignore double clicks
+    setBusy(true);
     setError("");
     const auth = getFirebaseAuth();
-    if (!auth) return;
+    if (!auth) {
+      setBusy(false);
+      return;
+    }
     try {
       await signInWithPopup(auth, getGoogleProvider());
     } catch (err) {
       console.error("Google sign-in error:", err);
       const code = (err as { code?: string }).code ?? "";
-      if (code !== "auth/popup-closed-by-user") {
+      const ignorable = [
+        "auth/popup-closed-by-user",
+        "auth/cancelled-popup-request",
+      ];
+      if (!ignorable.includes(code)) {
         setError("Sign-in failed. Please try again.");
       }
+    } finally {
+      setBusy(false);
     }
   }
 
@@ -51,7 +64,8 @@ export default function AuthButton() {
       <div className="flex items-center gap-2">
         <button
           onClick={handleSignIn}
-          className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 hover:bg-slate-100"
+          disabled={busy}
+          className="rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-900 hover:bg-slate-100 disabled:opacity-50"
         >
           Sign in with Google
         </button>
