@@ -29,11 +29,11 @@ export default function TitleCard({
   children?: ReactNode;
 }) {
   const providerStyle =
-    PROVIDER_STYLES[title.provider] ?? "bg-neutral-600 text-white";
+    PROVIDER_STYLES[title.provider] ?? "bg-slate-600 text-white";
   const tokenLabel = `${title.tokenCost} ${title.tokenCost === 1 ? "token" : "tokens"}`;
 
   return (
-    <article className="flex h-full flex-col justify-between rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+    <article className="flex h-full flex-col justify-between rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
       <div>
         <div className="mb-3 flex items-center justify-between gap-2">
           <span
@@ -49,7 +49,7 @@ export default function TitleCard({
         </div>
 
         <h3 className="text-base font-semibold leading-snug">{title.title}</h3>
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           {TYPE_LABELS[title.type] ?? title.type} ·{" "}
           {formatRuntime(title.runtimeMinutes)}
           {title.episodeCount ? ` · ${title.episodeCount} episodes` : ""}
@@ -59,7 +59,7 @@ export default function TitleCard({
           {title.genre.map((g) => (
             <span
               key={g}
-              className="rounded-md bg-neutral-100 px-2 py-0.5 text-xs capitalize text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300"
+              className="rounded-md bg-slate-100 px-2 py-0.5 text-xs capitalize text-slate-700 dark:bg-slate-800 dark:text-slate-300"
             >
               {g}
             </span>

@@ -17,12 +17,12 @@ function FilterSelect({
   options: string[];
 }) {
   return (
-    <label className="flex flex-col gap-1 text-xs font-medium text-neutral-500 dark:text-neutral-400">
+    <label className="flex flex-col gap-1 text-xs font-medium text-slate-500 dark:text-slate-400">
       {label}
       <select
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm capitalize text-neutral-900 dark:border-neutral-700 dark:bg-neutral-900 dark:text-neutral-100"
+        className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm capitalize text-slate-900 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-100"
       >
         <option value="all">All</option>
         {options.map((o) => (
@@ -49,12 +49,14 @@ export default function CataloguePage() {
         const res = await fetch("/api/catalog");
         const data = await res.json();
         if (!res.ok) {
-          throw new Error(data?.error?.message ?? "Could not load the catalogue.");
+          throw new Error(
+            data?.error?.message ?? "Could not load the catalogue.",
+          );
         }
         setTitles(data.titles);
       } catch (e) {
         setError(
-          e instanceof Error ? e.message : "Could not load the catalogue."
+          e instanceof Error ? e.message : "Could not load the catalogue.",
         );
       } finally {
         setLoading(false);
@@ -65,18 +67,18 @@ export default function CataloguePage() {
 
   const genres = useMemo(
     () => [...new Set(titles.flatMap((t) => t.genre))].sort(),
-    [titles]
+    [titles],
   );
   const providers = useMemo(
     () => [...new Set(titles.map((t) => t.provider))].sort(),
-    [titles]
+    [titles],
   );
 
   const filtered = titles.filter(
     (t) =>
       (genre === "all" || t.genre.includes(genre)) &&
       (provider === "all" || t.provider === provider) &&
-      (type === "all" || t.type === type)
+      (type === "all" || t.type === type),
   );
 
   function clearFilters() {
@@ -88,7 +90,7 @@ export default function CataloguePage() {
   return (
     <div>
       <h1 className="text-2xl font-bold tracking-tight">Catalogue</h1>
-      <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+      <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
         Every service, one wallet. Spend tokens on whatever you want to watch.
       </p>
 
@@ -120,7 +122,7 @@ export default function CataloguePage() {
       </div>
 
       {loading && (
-        <p className="mt-8 text-sm text-neutral-500">Loading catalogue…</p>
+        <p className="mt-8 text-sm text-slate-500">Loading catalogue…</p>
       )}
 
       {error && (
@@ -131,7 +133,7 @@ export default function CataloguePage() {
 
       {!loading && !error && (
         <>
-          <p className="mt-6 text-sm text-neutral-500 dark:text-neutral-400">
+          <p className="mt-6 text-sm text-slate-500 dark:text-slate-400">
             Showing {filtered.length} of {titles.length} titles
           </p>
 

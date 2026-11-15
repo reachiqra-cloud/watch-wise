@@ -28,7 +28,7 @@ function bubbleClass(m: Msg) {
   if (m.isError) {
     return `${base} rounded-bl-sm border border-red-300 bg-red-50 text-red-700 dark:border-red-900 dark:bg-red-950 dark:text-red-300`;
   }
-  return `${base} rounded-bl-sm bg-white text-neutral-900 shadow-sm dark:bg-neutral-800 dark:text-neutral-100`;
+  return `${base} rounded-bl-sm bg-white text-slate-900 shadow-sm dark:bg-slate-800 dark:text-slate-100`;
 }
 
 export default function AssistantPage() {
@@ -85,7 +85,7 @@ export default function AssistantPage() {
       if (!res.ok || !data) {
         throw new Error(
           data?.error?.message ??
-            "The assistant ran into a problem. Please try again."
+            "The assistant ran into a problem. Please try again.",
         );
       }
 
@@ -105,7 +105,13 @@ export default function AssistantPage() {
           : "The assistant ran into a problem. Please try again.";
       setMessages((prev) => [
         ...prev.map((m) => (m.id === userMsg.id ? { ...m, skip: true } : m)),
-        { id: replyId, role: "assistant", text: errText, isError: true, skip: true },
+        {
+          id: replyId,
+          role: "assistant",
+          text: errText,
+          isError: true,
+          skip: true,
+        },
       ]);
     } finally {
       setSending(false);
@@ -116,16 +122,16 @@ export default function AssistantPage() {
     <div className="flex h-[calc(100vh-10rem)] flex-col">
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Assistant</h1>
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
           Tell me what you are in the mood for. I check the catalogue and your
           wallet before recommending anything.
         </p>
       </div>
 
-      <div className="mt-4 flex-1 space-y-4 overflow-y-auto rounded-xl border border-neutral-200 bg-neutral-50 p-4 dark:border-neutral-800 dark:bg-neutral-900/50">
+      <div className="mt-4 flex-1 space-y-4 overflow-y-auto rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/50">
         {messages.length === 0 && (
           <div className="flex flex-col items-start gap-2">
-            <p className="text-sm text-neutral-500">Try one of these:</p>
+            <p className="text-sm text-slate-500">Try one of these:</p>
             {STARTERS.map((s) => (
               <button
                 key={s}
@@ -142,7 +148,9 @@ export default function AssistantPage() {
         {messages.map((m) => (
           <div
             key={m.id}
-            className={m.role === "user" ? "flex justify-end" : "flex justify-start"}
+            className={
+              m.role === "user" ? "flex justify-end" : "flex justify-start"
+            }
           >
             <div className="max-w-[85%]">
               <div className={bubbleClass(m)}>{m.text}</div>
@@ -153,7 +161,7 @@ export default function AssistantPage() {
                       <TitleCard key={id} title={catalog[id]}>
                         <WatchButton titleId={id} />
                       </TitleCard>
-                    ) : null
+                    ) : null,
                   )}
                 </div>
               )}
@@ -163,7 +171,7 @@ export default function AssistantPage() {
 
         {sending && (
           <div className="flex justify-start">
-            <div className="animate-pulse rounded-2xl rounded-bl-sm bg-white px-4 py-2 text-sm text-neutral-500 shadow-sm dark:bg-neutral-800">
+            <div className="animate-pulse rounded-2xl rounded-bl-sm bg-white px-4 py-2 text-sm text-slate-500 shadow-sm dark:bg-slate-800">
               Thinking… checking the catalogue and your wallet
             </div>
           </div>
@@ -185,7 +193,7 @@ export default function AssistantPage() {
           maxLength={1000}
           disabled={sending}
           placeholder="Ask for a recommendation..."
-          className="flex-1 rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm disabled:opacity-60 dark:border-neutral-700 dark:bg-neutral-900"
+          className="flex-1 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm disabled:opacity-60 dark:border-slate-700 dark:bg-slate-900"
         />
         <button
           type="submit"

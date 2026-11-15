@@ -54,7 +54,7 @@ export default function BudgetPage() {
       if (!budgetRes.ok || !data) {
         throw new Error(
           data?.error?.message ??
-            "The budget planner ran into a problem. Please try again."
+            "The budget planner ran into a problem. Please try again.",
         );
       }
       if (!Array.isArray(data.projectedUsage)) {
@@ -69,7 +69,7 @@ export default function BudgetPage() {
       setError(
         e instanceof Error
           ? e.message
-          : "The budget planner ran into a problem. Please try again."
+          : "The budget planner ran into a problem. Please try again.",
       );
     } finally {
       setLoading(false);
@@ -89,7 +89,7 @@ export default function BudgetPage() {
       <div className="flex flex-wrap items-start justify-between gap-3">
         <div>
           <h1 className="text-2xl font-bold tracking-tight">Budget plan</h1>
-          <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+          <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
             An AI look at your viewing history, with a plan that fits how you
             actually watch.
           </p>
@@ -97,14 +97,14 @@ export default function BudgetPage() {
         <button
           onClick={load}
           disabled={loading}
-          className="rounded-lg border border-neutral-300 px-3 py-2 text-sm font-semibold hover:bg-neutral-100 disabled:opacity-60 dark:border-neutral-700 dark:hover:bg-neutral-800"
+          className="rounded-lg border border-slate-300 px-3 py-2 text-sm font-semibold hover:bg-slate-100 disabled:opacity-60 dark:border-slate-700 dark:hover:bg-slate-800"
         >
           {loading ? "Analysing…" : "Refresh analysis"}
         </button>
       </div>
 
       {loading && (
-        <div className="mt-8 flex items-center gap-3 text-sm text-neutral-500">
+        <div className="mt-8 flex items-center gap-3 text-sm text-slate-500">
           <span className="h-5 w-5 animate-spin rounded-full border-2 border-indigo-600 border-t-transparent" />
           Analysing your viewing history…
         </div>
@@ -118,14 +118,14 @@ export default function BudgetPage() {
 
       {budget && !loading && !error && (
         <div className="mt-6 space-y-6">
-          <section className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+          <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <h2 className="text-lg font-semibold">Your viewing summary</h2>
             <p className="mt-2 text-sm">{budget.summary}</p>
           </section>
 
-          <section className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+          <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <h2 className="text-lg font-semibold">Projected weekly usage</h2>
-            <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+            <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
               About {fmt(budget.projectedMonthlyTokens)} tokens this month
             </p>
             <div className="mt-4 h-64 w-full">
@@ -139,7 +139,10 @@ export default function BudgetPage() {
                     stroke="#a3a3a3"
                     strokeOpacity={0.3}
                   />
-                  <XAxis dataKey="week" tick={{ fill: "#737373", fontSize: 12 }} />
+                  <XAxis
+                    dataKey="week"
+                    tick={{ fill: "#737373", fontSize: 12 }}
+                  />
                   <YAxis tick={{ fill: "#737373", fontSize: 12 }} />
                   <Tooltip formatter={(value) => `${value} tokens`} />
                   <Bar dataKey="tokens" fill="#4f46e5" radius={[6, 6, 0, 0]} />
@@ -153,23 +156,23 @@ export default function BudgetPage() {
               <h2 className="text-lg font-semibold">Plan fit</h2>
               <div className="mt-3 grid gap-4 sm:grid-cols-2">
                 {plan && (
-                  <div className="rounded-xl border border-neutral-200 bg-white p-4 dark:border-neutral-800 dark:bg-neutral-900">
-                    <p className="text-xs font-semibold uppercase tracking-wide text-neutral-500">
+                  <div className="rounded-xl border border-slate-200 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+                    <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">
                       Your plan now
                     </p>
                     <p className="mt-1 text-xl font-bold">{plan.name}</p>
-                    <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                    <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                       ${fmt(plan.pricePerMonth)} per month ·{" "}
                       {fmt(plan.tokensPerMonth)} tokens
                     </p>
                   </div>
                 )}
-                <div className="rounded-xl border-2 border-indigo-500 bg-white p-4 dark:bg-neutral-900">
+                <div className="rounded-xl border-2 border-indigo-500 bg-white p-4 dark:bg-slate-900">
                   <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600 dark:text-indigo-400">
                     Suggested for you
                   </p>
                   <p className="mt-1 text-xl font-bold">{tier.name}</p>
-                  <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
+                  <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
                     ${fmt(tier.pricePerMonth)} per month ·{" "}
                     {fmt(tier.tokensPerMonth)} tokens
                   </p>
@@ -184,7 +187,7 @@ export default function BudgetPage() {
           )}
 
           {tips.length > 0 && (
-            <section className="rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900">
+            <section className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <h2 className="text-lg font-semibold">Tips</h2>
               <ul className="mt-2 list-disc space-y-1 pl-5 text-sm">
                 {tips.map((tip, i) => (

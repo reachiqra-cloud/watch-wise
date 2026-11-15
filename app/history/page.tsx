@@ -24,13 +24,13 @@ export default function HistoryPage() {
         const data = await res.json();
         if (!res.ok) {
           throw new Error(
-            data?.error?.message ?? "Could not load your history."
+            data?.error?.message ?? "Could not load your history.",
           );
         }
         setHistory(data.history);
       } catch (e) {
         setError(
-          e instanceof Error ? e.message : "Could not load your history."
+          e instanceof Error ? e.message : "Could not load your history.",
         );
       } finally {
         setLoading(false);
@@ -46,14 +46,14 @@ export default function HistoryPage() {
       <h1 className="text-2xl font-bold tracking-tight">Watch history</h1>
 
       {!loading && !error && (
-        <p className="mt-1 text-sm text-neutral-500 dark:text-neutral-400">
-          {history.length} {history.length === 1 ? "title" : "titles"} watched
-          · {totalSpent} tokens spent
+        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">
+          {history.length} {history.length === 1 ? "title" : "titles"} watched ·{" "}
+          {totalSpent} tokens spent
         </p>
       )}
 
       {loading && (
-        <p className="mt-6 text-sm text-neutral-500">Loading history…</p>
+        <p className="mt-6 text-sm text-slate-500">Loading history…</p>
       )}
 
       {error && (
@@ -70,7 +70,7 @@ export default function HistoryPage() {
       )}
 
       {!loading && !error && history.length > 0 && (
-        <ul className="mt-6 divide-y divide-neutral-200 overflow-hidden rounded-xl border border-neutral-200 bg-white dark:divide-neutral-800 dark:border-neutral-800 dark:bg-neutral-900">
+        <ul className="mt-6 divide-y divide-slate-200 overflow-hidden rounded-xl border border-slate-200 bg-white dark:divide-slate-800 dark:border-slate-800 dark:bg-slate-900">
           {history.map((h, i) => (
             <li
               key={`${h.titleId}-${h.watchedAt}-${i}`}
@@ -78,7 +78,7 @@ export default function HistoryPage() {
             >
               <div>
                 <p className="font-medium">{h.title}</p>
-                <p className="text-xs text-neutral-500 dark:text-neutral-400">
+                <p className="text-xs text-slate-500 dark:text-slate-400">
                   {formatWhen(h.watchedAt)}
                 </p>
               </div>

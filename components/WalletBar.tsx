@@ -16,7 +16,6 @@ const NAV_LINKS = [
   { href: "/about", label: "About" },
 ];
 
-
 function formatTokens(n: number) {
   return Number.isInteger(n) ? String(n) : n.toFixed(1);
 }
@@ -34,7 +33,7 @@ function NavLinks({ className }: { className: string }) {
             className={`whitespace-nowrap rounded-md px-2 py-1 ${
               active
                 ? "bg-indigo-100 font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300"
-                : "text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+                : "text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
             }`}
           >
             {link.label}
@@ -75,7 +74,7 @@ export default function WalletBar() {
       : `${formatTokens(balance)} ${balance === 1 ? "token" : "tokens"}`;
 
   return (
-    <header className="sticky top-0 z-20 border-b border-neutral-200 bg-white/90 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/90">
+    <header className="sticky top-0 z-20 border-b border-slate-200 bg-white/90 backdrop-blur dark:border-slate-700 dark:bg-[#1b2a41]/90">
       <div className="mx-auto max-w-6xl px-4">
         <div className="flex items-center justify-between gap-4 py-3">
           <Link
@@ -93,7 +92,7 @@ export default function WalletBar() {
             WatchWise
           </Link>
 
-           <NavLinks className="hidden items-center gap-1 text-sm lg:flex" />
+          <NavLinks className="hidden items-center gap-1 text-sm lg:flex" />
 
           <div
             aria-live="polite"
@@ -105,7 +104,7 @@ export default function WalletBar() {
           </div>
         </div>
 
-                <NavLinks className="-mx-1 flex gap-1 overflow-x-auto pb-2 text-sm lg:hidden" />
+        <NavLinks className="-mx-1 flex gap-1 overflow-x-auto pb-2 text-sm lg:hidden" />
       </div>
     </header>
   );

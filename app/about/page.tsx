@@ -41,7 +41,7 @@ const PILLARS = [
 ];
 
 const CARD =
-  "rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-800 dark:bg-neutral-900";
+  "rounded-xl border border-slate-200 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900";
 
 export default function AboutPage() {
   return (
@@ -53,7 +53,7 @@ export default function AboutPage() {
         <h1 className="mt-2 text-4xl font-bold tracking-tight">
           One subscription. Every streaming service.
         </h1>
-        <p className="mt-3 text-lg text-neutral-600 dark:text-neutral-300">
+        <p className="mt-3 text-lg text-slate-600 dark:text-slate-300">
           WatchWise is an AI-powered wallet for streaming: one monthly plan,
           shared tokens, and Gemini to help you get the most out of them.
         </p>
@@ -66,7 +66,7 @@ export default function AboutPage() {
           </Link>
           <Link
             href="/"
-            className="rounded-lg border border-neutral-300 px-4 py-2 text-sm font-semibold hover:bg-neutral-100 dark:border-neutral-700 dark:hover:bg-neutral-800"
+            className="rounded-lg border border-slate-300 px-4 py-2 text-sm font-semibold hover:bg-slate-100 dark:border-slate-700 dark:hover:bg-slate-800"
           >
             Browse the catalogue
           </Link>
@@ -75,7 +75,7 @@ export default function AboutPage() {
 
       <section>
         <h2 className="text-2xl font-bold tracking-tight">The problem</h2>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-300">
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
           We pay for Netflix, Prime Video, Disney+ and Hulu. That is $60+ a
           month, and most of us only watch a few things on each one.
         </p>
@@ -85,14 +85,14 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold tracking-tight">
           One wallet, shared tokens
         </h2>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-300">
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
           $25 a month gets you 20 tokens that work on every service, so you pay
           for what you actually watch.
         </p>
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {TOKEN_PRICES.map((p) => (
             <div key={p.label} className={CARD}>
-              <p className="text-sm text-neutral-500 dark:text-neutral-400">
+              <p className="text-sm text-slate-500 dark:text-slate-400">
                 {p.label}
               </p>
               <p className="mt-1 font-semibold text-indigo-600 dark:text-indigo-400">
@@ -101,20 +101,18 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
-        <p className="mt-3 text-sm text-neutral-500 dark:text-neutral-400">
+        <p className="mt-3 text-sm text-slate-500 dark:text-slate-400">
           Prices are fixed in code. The AI never decides what something costs.
         </p>
       </section>
 
       <section>
-        <h2 className="text-2xl font-bold tracking-tight">
-          How Gemini helps
-        </h2>
+        <h2 className="text-2xl font-bold tracking-tight">How Gemini helps</h2>
         <div className="mt-4 space-y-3">
           {AI_FEATURES.map((f) => (
             <div key={f.title} className={CARD}>
               <h3 className="font-semibold">{f.title}</h3>
-              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
                 {f.body}
               </p>
               <Link
@@ -138,7 +136,7 @@ export default function AboutPage() {
               <h3 className="font-semibold text-indigo-600 dark:text-indigo-400">
                 {p.title}
               </h3>
-              <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-300">
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
                 {p.body}
               </p>
             </div>
@@ -150,7 +148,7 @@ export default function AboutPage() {
         <h2 className="text-2xl font-bold tracking-tight">
           What is real, what is mock
         </h2>
-        <p className="mt-2 text-neutral-600 dark:text-neutral-300">
+        <p className="mt-2 text-slate-600 dark:text-slate-300">
           The AI layer is real. The streaming catalogue and billing are mock
           data, because there are no public streaming APIs and real content
           needs licensing. Watching a title simply spends tokens.
