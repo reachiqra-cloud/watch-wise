@@ -31,6 +31,18 @@ html {
   --color-neutral-900: #0b3d5a;
   --color-neutral-950: #023047;
 
+    --color-slate-50: #f5f1ee;
+  --color-slate-100: #f5f1ee;
+  --color-slate-200: #cfe6f3;
+  --color-slate-300: #cfe6f3;
+  --color-slate-400: #9fc3d6;
+  --color-slate-500: #7fa8be;
+  --color-slate-600: #5e8da6;
+  --color-slate-700: #2a6585;
+  --color-slate-800: #15506e;
+  --color-slate-900: #0b3d5a;
+  --color-slate-950: #023047;
+  
   --color-indigo-100: #cfe6f3;
   --color-indigo-300: #cfe6f3;
   --color-indigo-400: #ff9e8b;
