@@ -136,16 +136,26 @@ export default function BudgetPage() {
                 >
                   <CartesianGrid
                     strokeDasharray="3 3"
-                    stroke="#a3a3a3"
+                    stroke="#8ECAE6"
                     strokeOpacity={0.3}
                   />
                   <XAxis
                     dataKey="week"
-                    tick={{ fill: "#737373", fontSize: 12 }}
+                    tick={{ fill: "#9FC3D6", fontSize: 12 }}
                   />
-                  <YAxis tick={{ fill: "#737373", fontSize: 12 }} />
-                  <Tooltip formatter={(value) => `${value} tokens`} />
-                  <Bar dataKey="tokens" fill="#4f46e5" radius={[6, 6, 0, 0]} />
+                  <YAxis tick={{ fill: "#9FC3D6", fontSize: 12 }} />
+                                    <Tooltip
+                    formatter={(value) => `${value} tokens`}
+                    contentStyle={{
+                      background: "#0B3D5A",
+                      border: "1px solid #1F5573",
+                      borderRadius: 8,
+                    }}
+                    labelStyle={{ color: "#F5F1EE" }}
+                    itemStyle={{ color: "#8ECAE6" }}
+                    cursor={{ fill: "rgba(142,202,230,0.1)" }}
+                  />
+                  <Bar dataKey="tokens" fill="#8ECAE6" radius={[6, 6, 0, 0]} />
                 </BarChart>
               </ResponsiveContainer>
             </div>
